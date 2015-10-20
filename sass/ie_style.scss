@@ -1,0 +1,65 @@
+@import "susy";
+
+$total-columns: 12; //欄位數量  
+$column-width: 60px; //欄位寬度  
+$gutter-width: 20px; //欄位與欄位間的間距  
+$grid-padding: 10px; //格線最外圍左右邊的間距  
+
+#bg{
+@include set-container-width;
+.honbiki{
+	 	 @include span-columns(10);
+		 @include isolate(3);
+		 margin-top: 10%;
+	 }
+
+}
+
+nav{
+	ul{
+		@include set-container-width;
+	li{
+		@include span-columns(3,12);
+	&.li_last{
+				@include span-columns(3 omega,12);
+		}
+	}
+ }
+}
+
+
+#story{
+	@include container;
+		//@include susy-grid-background;
+		padding-bottom: 10em;			
+			.story_h1{
+				margin: 10px 0px;
+			}
+}
+
+#tutor_content{
+	margin: 0px auto;
+	#content{
+		position: relative;
+		top:-100%;
+		a{
+			div{
+				background-color: #fff;
+				height: 150%;
+				filter:Alpha(opacity=0);
+			}
+		}
+	}
+}
+
+#video{
+	@include container;
+	background:transparent url('../images/saihonbiki.jpg') center 74px no-repeat;
+		padding-bottom: 50em;
+		.easyhtml5video{
+			@include span-columns(1) ;
+			@include isolate(4) ;
+			position: relative;
+			visibility: hidden;
+		}
+}
